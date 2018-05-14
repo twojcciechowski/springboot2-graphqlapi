@@ -1,0 +1,10 @@
+.project
+.DS_Store
+.settings
+.idea
+*.iml
+out
+target
+.gradle
+gradlew
+gradlew.bat
