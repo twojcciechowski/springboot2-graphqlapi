@@ -1,11 +1,12 @@
 package pl.tw.graphqlapi.queries;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Component;
+import pl.tw.graphqlapi.PermissionsConstants;
+import pl.tw.graphqlapi.RepoMock;
 import pl.tw.graphqlapi.types.Post;
-
-import java.util.Arrays;
-import java.util.List;
 
 /**
  * @author Tomasz Wojciechowski
@@ -13,12 +14,15 @@ import java.util.List;
 @Component
 public class PostQuery implements GraphQLQueryResolver {
 
+	@Autowired
+	private RepoMock repository;
 
+	@Secured(PermissionsConstants.CAN_FETCH_SINGLE_POST)
 	public Post getPost(String id) {
-		return Arrays.asList(
-				new Post("1","title1","AAA","book","A1"),
-				new Post("2","title2","AAA","book","A2"),
-				new Post("3","title3","AAA","book","A2")
-		).stream().filter(p->p.getId().equals(id)).findFirst().get();
+		return repository.getPosts()
+				.stream()
+				.filter(p->p.getId().equals(id))
+				.findFirst()
+				.get();
 	}
 }
