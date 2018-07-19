@@ -51,6 +51,10 @@
 					{
 						"key": "Accept",
 						"value": "application/json"
+					},
+					{
+						"key": "X-Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0b21layIsImV4cCI6MTUzMTk5NjM0NX0.I8vEUdhATlCM4tbtNwNsZ2JLsAg4oYAj0RVv0UYY7l6J-bo6DC6pa7-kTN83d_oNpJJ7_uX-NbjluUsaxFWg4w"
 					}
 				],
 				"body": {
@@ -66,6 +70,76 @@
 					"port": "8080",
 					"path": [
 						"graphql"
+					]
+				},
+				"description": "first "
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\":\"tomek\",\n\t\"password\":\"AAA111\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				},
+				"description": "first "
+			},
+			"response": []
+		},
+		{
+			"name": "Index",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json;charset=UTF-8"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "X-Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0b21layIsImV4cCI6MTUzMTk5NjQ2NX0.FTCi_FRupVdpfGZI2jmuUNPBeX4Xd5tUrYOGEE-giwJdU1B7UhGtw1UgZ-vBJXFpkqunHaw0FaAmU-FT1Dgwjg"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						""
 					]
 				},
 				"description": "first "
